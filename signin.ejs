@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            top:-30px;
+        }
+        body{
+            width:500px;
+            height: 500px;
+            padding-left: 200px;
+            margin: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(6, 6, 6, 0.61);
+            backdrop-filter: blur(10px);
+
+        }
+        .container{
+            width:80%;
+            height:100%;
+            padding-left:10px;
+            border: 2px solid black;
+            background-color: white;
+
+        }
+        form{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        h1{
+       
+        
+        text-align: center;
+        font-size: 50px;
+        font-weight: 1000;
+        padding-bottom: 10px;
+        }
+        label{
+            text-transform: capitalize;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           padding-right: 80px;
+           padding-bottom: -50px;
+        }
+        label[for="email"] {
+            padding-right: 90px;
+        }
+        label[for="password"]{
+            padding-right: 100px;
+        }
+        input{
+            width: 50%;
+            height: 30px;
+        }
+        input::placeholder{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        input[type="submit"]{
+            background-color: rgb(122, 127, 69);
+            color: rgb(99, 129, 157);
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>LOGIN- PAGE</h1>
+    <form method="GET" action="loginsubmit">
+        <label for="name">Enter your username</label><br>
+        <input type="text" name="name" id="name" palceholder="name" required><br>
+        <label for="email">Enter your email-id</label><br>
+        <input type="email" name="email" id="email" palceholder="abc@gmail.colm" required><br>
+        <label for="password">Enter password</label><br>
+        <input type="password" name="password" id="password" palceholder="password" required><br>
+        <input type="submit" value="submit" >
+       
+    </form>
+</div>
+
+</body>
+</html>

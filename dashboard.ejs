@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+
+}
+#content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 130px;
+}
+.box{
+    position: relative;
+    height: 400px;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px green;
+    overflow: hidden;
+}
+.box img{
+    width: 100%;
+    height: 70%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 12vh;
+    line-height: 12vh;
+    width: 100%;
+    background-color: rgb(177, 159, 194);
+    color: rgb(179, 36, 36);
+    position: fixed;
+    z-index: 10;
+}
+
+nav h1{
+
+    font-size: 2em;
+    margin-left: 10px;
+}
+nav h1:nth-child(1){
+    margin-right: 20px;
+}
+button{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    height: 45px;
+    min-width: 100px;
+    border: none;
+    font-size: 1.3em;
+    background-color: rgb(2, 3, 20);
+    color: white;
+    border-radius: 9px;
+
+}
+.hide{
+    position: absolute;
+    opacity: 0;
+    transition: .7s;
+    padding: 10px;
+    bottom: 0;
+    transform: translateY(100px);
+
+}
+.box:hover .hide{
+    z-index: 20;
+    opacity: 1;
+    transform: translateY(-10px);
+    height: 50%;
+    bottom: -10px;
+    width: 100%;
+    border-radius: 20px;
+    color: rgb(50, 5, 27);
+    background-color: rgba(37, 179, 42, 0.733);
+}
+    </style>
+</head>
+<body>
+    <nav><h1>Shopping Page</h1><div class="more"><h1>More</h1></div></nav>
+    <div id="content"></div>
+   
+    <script>
+       
+        let card;
+        let content = document.getElementById("content");
+        let apiData = async function(){
+            return fetch('https://fakestoreapi.com/products').then(res=>res.json().then(data=>{
+               data.map(mansaran=>{(content.innerHTML=content.innerHTML+`<div class="box">
+                <img src=${teja.Title}>
+                <h4>${teja.title}</h4><br>
+                <p> ${teja.rating.rate}</p>
+                <h3 >$${teja.price}</h3>
+                
+                <div class='hide'>${saran.description} <button>Add</button></div>
+                </div>`)})
+            }))
+        }
+        apiData()
+        
+    </script>
+</body>
+</html>
